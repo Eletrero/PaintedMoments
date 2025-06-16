@@ -1,0 +1,566 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('/html/fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('/html/fonts/Roboto_Condensed-Italic.ttf') format('truetype');
+
+}
+@font-face {
+    font-family: 'daisybud';
+    src: url('/paguina_wendy/html/fonts/DaisybudScript_PERSONAL_USE_ONLY.otf');
+}
+@font-face {
+    font-family: 'decoration';
+    src: url('/paguina_wendy/html/fonts/DaisybudDecorations_PERSONAL_USE_ONLY.otf');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: white;
+    overflow-x: hidden;
+}
+
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1b1717;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1; /* Opacidad inicial visible */
+    transition: opacity 1.5s ease-in-out, visibility 1.5s ease-in-out; /* Transición suave */
+    z-index: 10; /* Asegura que esté por encima del contenido */
+}
+
+
+.animation-loader{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#loader-percentage {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #868080;
+}
+
+.animation-loader svg{
+    width: 200px;
+}
+
+/* Estilos para el spinner */
+.spinner {
+    border: 8px solid #d8d8d8; /* Light grey */
+    border-top: 8px solid #0b269e; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1.2s linear infinite; /* Animación de rotación */
+}
+
+/* Animación de rotación del spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Estilos para ocultar el contenido inicialmente */
+#content {
+    display: none; /* Oculta el contenido hasta que la carga termine */
+    transform: scale(0.9); /* Pequeña escala para un efecto visual */
+    transition: transform 0.5s ease-out;
+}       
+
+/* Clase para ocultar el loader con una transición */
+#loader-wrapper.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/*ventana emergente*/
+
+.poup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.poup-content{
+    background-color: #333336;
+    color: rgb(255, 255, 255);
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: transform .9s ease-in-out;
+    -webkit-transition: transform .9s ease-in-out;
+    -moz-transition: transform .9s ease-in-out;
+    -ms-transition: transform .9s ease-in-out;
+    -o-transition: transform .9s ease-in-out;
+}
+
+.poup-content img{
+    width: 70%;
+}
+
+.poup-content button{
+    margin-top: 15px;
+    padding: 8px 16px;
+    border: none;
+    background-color: #308f19;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.poup-content button:hover{
+    background-color: #10bd27;
+}
+
+/**BASE*/
+.seccion{
+    width: 100%;
+    padding: 10px;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.encabesado{
+    text-align: center;
+    font-size: 45px;
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+
+#bar {
+    height: 30vh;
+    background-image: url("/paguina_wendy/img/bacground_1.jpeg")
+}
+
+#inicio {
+    height: 100vh;
+    background-image: url("/paguina_wendy/img/bacground_1.jpeg");
+}
+
+#servicios {
+    background-image: url("/paguina_wendy/img/bacground_2.jpeg");
+}
+
+#productos {
+    background-image: url("/paguina_wendy/img/bacground_3.jpeg");
+}
+
+#freq {
+    height: 100vh;
+    padding: 20px;
+    background-image: url("/paguina_wendy/img/bacground_3.jpeg");
+}
+
+#comentarios {
+    background-image: url("/paguina_wendy/img/bacground_4.jpg");
+}
+
+#contacto  {
+    height: 70vh;
+    background-image: url("/paguina_wendy/img/bacground_4.jpg");
+}
+
+/* Estilos de la barra de navegación */
+.navbar {
+    background-color: #375258ee;
+    color: white;
+    padding: 15px 20px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Fija el menú en la parte superior */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+/* Estilos del logo/marca */
+.brand-logo {
+    color: white;
+    font-family: daisybud;
+    text-decoration: none;
+    font-size: 2.4em;
+    font-weight: bold;
+}
+
+.brand-logo:hover{
+    color: black;
+}
+
+.brand-logo img{
+    width: 70px;
+}
+
+/* Estilos de los enlaces de navegación */
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Muestra los enlaces en línea */
+}
+
+.decoration{
+    font-family: decoration;
+    font-size: 1.1em;
+}
+
+
+.nav-links li {
+    margin-left: 25px; /* Espacio entre los enlaces */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 0;
+    transition: color 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+.nav-links a:hover {
+    color: #ffd700; /* Color al pasar el ratón */
+}
+
+/* Estilos del botón de hamburguesa (oculto por defecto en pantallas grandes) */
+.hamburger-menu {
+    display: none; /* Oculto en escritorio */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/*Inicio*/
+h1{
+    font-size: 50px;
+    text-shadow: 8px 6px 3px #272727;
+
+}
+.home{
+    display: flex;
+    justify-content: center;
+}
+.home div{
+    width: 50%;
+    margin: 8px;
+}
+.present{
+    padding: 10px;
+    background-color: #3752589f;
+    border-radius: 8px;
+}
+video{
+    width: 40%;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+
+/*Información de servicios y productos*/
+.container-listRef{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+}
+
+.listRef{
+    display: flex;
+    width: 40%;
+    padding: 0;
+    margin: 0;
+    margin-right: 20px; 
+}
+
+.listRef h2{
+    text-align: center;
+}
+
+.listRef ol{
+    background-color: #74849299;
+    border-radius: 8px;
+}
+
+.listRef ol h2{
+    padding: 3%;
+    margin: 5%;
+}
+
+.listRef ol li{
+    list-style-type: disc;
+    list-style-position: inside;
+    padding: 4px;
+}
+/*galeria de imagenes*/
+.contenedor {
+    width: 100%; /* Ancho del contenedor */
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    white-space: nowrap; /* Evita que las imágenes se envuelvan */
+    padding: 10px; /* Espaciado interno */
+    background-color: #ffffff00; /* Color de fondo del contenedor */
+}
+
+.imagen {
+    width: 200px; /* Ancho de cada imagen */
+    margin-right: 10px; /* Espaciado entre imágenes */
+    transition: transform 0.3s; /* Transición suave al pasar el mouse */
+    border-radius: 8px;
+}
+
+.imagen:hover {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
+}
+
+/*Preguntas frecuentes*/
+.preg{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+details{
+    background-color: #222;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    border-radius: 8px; 
+    padding: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+summary{
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+}
+
+details[open]{
+    background-color: #333;
+}
+
+details p{
+    margin: 10px 0 0 10px;
+    color: #fff;
+}
+
+.map-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+/*comentarios*/
+.lista-comentarios{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.comentario {
+    background-color: #f9f9f9CC;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    width: 300px;
+    height: 230px;
+    padding: 15px;
+    margin: 10px;
+    margin-bottom: 15px;
+}
+.comentario .autor {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.comentario .fecha {
+    font-size: 0.9em;
+    color: #777;
+    font-weight: normal;
+}
+
+.comentario .texto {
+    line-height: 1.6;
+    color: #555;
+}
+
+/*Formulario*/
+.contForm{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding-top: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+textarea{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 40%;
+    gap: 10px;
+}
+
+input, textarea{
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 17px 20px;
+    border: 0;
+    border-radius: 25px;
+    color: black;
+    outline: none;
+    font-size: 16px;
+}
+
+form .btn{
+    width: 50%;
+    height: 30px;
+    background-color: #2b2c35;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+form .btn:hover{
+    background-color: #606169;
+}
+
+/*pie de pagina*/
+footer{
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    color: white;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url("/paguina_wendy/img/bacground_4.jpg");
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem 0;
+    flex-wrap: nowrap;
+    transition: transform 0.3s;
+}
+
+.social li svg{
+    margin: 5px;
+    width: 35px;
+    height: 35px;
+}
+
+/* Media Queries para la responsividad */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Oculta los enlaces en pantallas pequeñas */
+        flex-direction: column; /* Apila los enlaces verticalmente */
+        width: 100%;
+        background-color: #3752589f;
+        position: absolute;
+        top: 60px; /* Debajo de la barra de navegación */
+        left: 0;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Muestra los enlaces cuando el menú está activo */
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Espacio vertical entre enlaces */
+    }
+
+    .hamburger-menu {
+        display: block; /* Muestra el botón de hamburguesa en pantallas pequeñas */
+    }
+
+    #inicio{
+        height: 120vh;
+    }
+
+    .home{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    video{
+        width: 75%;
+        height: auto;
+    }
+
+    .home div{
+        width: 90%;
+    }
+
+    .lista-comentarios{
+        flex-direction: column;
+    }
+
+    form{
+        width: 85%;
+    }
+}

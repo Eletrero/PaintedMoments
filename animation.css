@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#line4{
+    transform: translate(100px, 160px);
+    animation: movepadth 2s .5s both;
+    -webkit-animation: movepadth 2s .5s both;
+    -webkit-transform: translate(100px, 160px);
+    -moz-transform: translate(100px, 160px);
+    -ms-transform: translate(100px, 160px);
+    -o-transform: translate(100px, 160px);
+}
+#line3{
+    transform: translate(20px, 320px);
+    animation: movepadth 3s .5s both;
+    -webkit-animation: movepadth 3s .5s both;
+    -webkit-transform: translate(20px, 320px);
+    -moz-transform: translate(20px, 320px);
+    -ms-transform: translate(20px, 320px);
+    -o-transform: translate(20px, 320px);
+}
+
+#line5{
+    transform: translate(560px, 10px);
+    animation: movepadth 2s .5s both;
+    -webkit-transform: translate(560px, 10px);
+    -moz-transform: translate(560px, 10px);
+    -ms-transform: translate(560px, 10px);
+    -o-transform: translate(560px, 10px);
+    -webkit-animation: movepadth 2s .5s both;
+}
+
+#line2{
+    transform: translate(400px, 20px);
+    animation: movepadth 3s .5s both;
+    -webkit-transform: translate(400px, 20px);
+    -moz-transform: translate(400px, 20px);
+    -ms-transform: translate(400px, 20px);
+    -o-transform: translate(400px, 20px);
+    -webkit-animation: movepadth 3s .5s both;
+}
+
+#line6{
+    transform: translate(110px, 180px);
+    animation: movepadth 3s .5s both;
+    -webkit-transform: translate(110px, 180px);
+    -moz-transform: translate(110px, 180px);
+    -ms-transform: translate(110px, 180px);
+    -o-transform: translate(110px, 180px);
+    -webkit-animation: movepadth 3s .5s both;
+}
+
+#line1{
+    transform: translate(300px, 300px);
+    animation: movepadth 3s .5s both;
+    -webkit-transform: translate(300px, 300px);
+    -moz-transform: translate(300px, 300px);
+    -ms-transform: translate(300px, 300px);
+    -o-transform: translate(300px, 300px);
+    -webkit-animation: movepadth 3s .5s both;
+}
+
+#line7{
+    transform: translate(500px, 100px);
+    animation: movepadth 2s .5s both;
+    -webkit-transform: translate(500px, 100px);
+    -moz-transform: translate(500px, 100px);
+    -ms-transform: translate(500px, 100px);
+    -o-transform: translate(500px, 100px);
+    -webkit-animation: movepadth 2s .5s both;
+}
+
+@keyframes movepadth {
+    100%{
+        transform:unset;
+        -moz-transform:unset;
+        -ms-transform:unset;
+        -o-transform:unset;
+        -webkit-transform:unset;
+}
+}
